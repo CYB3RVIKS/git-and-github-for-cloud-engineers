@@ -472,7 +472,3 @@ The concepts and practical exercises documented in this repository were studied 
 [Watch the course on YouTube](https://www.youtube.com/watch?v=XWmH0rvLGJQ)
 
 ---
-
-**Author:** CYB3RVIKS
-**Project:** Git and GitHub for Cloud Engineers  
-**Focus Area:** Cloud Engineering and Version Control
