@@ -92,16 +92,6 @@ git config --global user.name
 git config --global user.email
 ```
 
-### Practical Evidence
-
-![Git version verification](screenshots/01-git-version.png)
-
-*Figure 1: Verifying the installed Git version.*
-
-![Git configuration](screenshots/02-git-configuration.png)
-
-*Figure 2: Configuring the Git username and email address.*
-
 ---
 
 ## 3. Git Workflow
@@ -124,8 +114,6 @@ This command creates a Git repository inside the current project folder.
 git init
 ```
 
-![Git initialisation](screenshots/03-git-init.png)
-
 *Figure 3: Initialising a Git repository.*
 
 ### 3.2 Staging Changes
@@ -144,10 +132,6 @@ To stage all changes in the current directory:
 git add .
 ```
 
-![Git staging](screenshots/04-git-staging.png)
-
-*Figure 4: Adding files to the staging area.*
-
 ### 3.3 Checking Repository Status
 
 The `git status` command shows the current state of the repository.
@@ -155,12 +139,6 @@ The `git status` command shows the current state of the repository.
 ```bash
 git status
 ```
-
-In my practical, the output showed that I was currently on the `master` branch and there was nothing to commit.
-
-![Git status](screenshots/05-git-status.png)
-
-*Figure 5: Checking the current repository status.*
 
 ### 3.4 Creating Commits
 
@@ -173,10 +151,6 @@ A commit acts as a snapshot of the project at a particular point in time, allowi
 ```bash
 git commit -m "A brief description of what you did"
 ```
-
-![Git commit](screenshots/06-git-commit.png)
-
-*Figure 6: Creating a Git commit.*
 
 ### 3.5 Viewing Commit History
 
@@ -191,10 +165,6 @@ To display the commit history in a shorter format:
 ```bash
 git log --oneline
 ```
-
-![Git log](screenshots/07-git-log.png)
-
-*Figure 7: Viewing the repository's commit history.*
 
 ---
 
@@ -261,21 +231,12 @@ Git examines three points:
 
 It combines the changes and normally creates a new merge commit to record the merge.
 
-In my practical, I made use of the fast-forward merge.
 
 **Merge command:**
 
 ```bash
 git merge feature-network
 ```
-
-![Branch creation](screenshots/08-branch-creation.png)
-
-*Figure 8: Creating and switching between branches.*
-
-![Fast-forward merge](screenshots/09-fast-forward-merge.png)
-
-*Figure 9: Performing a fast-forward merge.*
 
 ### Merge Conflicts
 
@@ -296,15 +257,6 @@ git add filename
 
 git commit -m "Resolve merge conflict"
 ```
-
-![Merge conflict](screenshots/10-merge-conflict.png)
-
-*Figure 10: Identifying a merge conflict.*
-
-![Conflict resolution](screenshots/11-conflict-resolution.png)
-
-*Figure 11: Resolving the merge conflict.*
-
 ---
 
 ## 5. GitHub and Remote Repositories
@@ -337,48 +289,6 @@ To push the contents of a branch to GitHub:
 git push -u origin azurenetwork
 ```
 
-![GitHub repository](screenshots/12-github-repository.png)
-
-*Figure 12: Creating a repository on GitHub.*
-
-![Remote configuration](screenshots/13-git-remote.png)
-
-*Figure 13: Connecting and verifying the remote repository.*
-
-![Git push](screenshots/14-git-push.png)
-
-*Figure 14: Pushing the azurenetwork branch to GitHub.*
-
-### Challenge Faced: Master and Main Branches
-
-I noticed that when I pushed my default `master` branch from my local Git repository to GitHub, it appeared as another branch entirely on GitHub.
-
-I decided to rename my local branch from `master` to `main`, pulled the contents of the `main` branch from GitHub into my local repository, and pushed my changes back to GitHub.
-
-During this process, I noticed that the repository contained two README files. I later realised that I needed to manage the local and remote repository contents more carefully.
-
-I renamed the README file in my local repository to `notes.md`.
-
-**Commands involved:**
-
-```bash
-git branch -M main
-
-git pull origin main
-
-git push -u origin main
-```
-
-These commands show the branch renaming and synchronisation steps. When local and remote histories differ, Git may require additional reconciliation before the pull can complete.
-
-![Main branch synchronisation](screenshots/15-main-branch-synchronisation.png)
-
-*Figure 15: Synchronising the local and remote main branches.*
-
-![Notes file](screenshots/16-notes-file.png)
-
-*Figure 16: Renaming the local README file to notes.md.*
-
 ---
 
 ## 6. Git Fetch and Git Pull
@@ -405,23 +315,7 @@ Git Pull fetches changes from the remote repository and then integrates them int
 git pull origin main
 ```
 
-### Practical Demonstration
-
-In this practical, I edited my README file on GitHub and used fetch and pull to retrieve the changes and integrate them into my local Git branch.
-
 The difference is that `git fetch` retrieves remote updates without integrating them, while `git pull` retrieves and integrates them.
-
-![Remote README edit](screenshots/17-remote-readme-edit.png)
-
-*Figure 17: Editing the README file on GitHub.*
-
-![Git fetch](screenshots/18-git-fetch.png)
-
-*Figure 18: Retrieving remote changes using Git Fetch.*
-
-![Git pull](screenshots/19-git-pull.png)
-
-*Figure 19: Retrieving and integrating remote changes using Git Pull.*
 
 ---
 
@@ -431,7 +325,7 @@ The difference is that `git fetch` retrieves remote updates without integrating 
 
 A pull request (PR) is a request to review and integrate changes from one branch into another.
 
-For example, an engineer creates a feature branch, develops a storage configuration, and pushes the branch to GitHub.
+For example, an engineer creates a feature branch, develops a storage cofiguration, and pushes the branch to GitHub.
 
 They then open a pull request requesting that their changes be merged into `main`.
 
@@ -455,24 +349,6 @@ Pull requests provide an opportunity to review infrastructure changes before the
 They improve accountability, collaboration, and code quality.
 
 They also allow other engineers to examine proposed changes before those changes become part of the approved project.
-
-### Practical Evidence
-
-![Feature branch](screenshots/20-feature-branch.png)
-
-*Figure 20: Creating a feature branch for development.*
-
-![Pull request creation](screenshots/21-pull-request-created.png)
-
-*Figure 21: Creating a pull request on GitHub.*
-
-![Pull request review](screenshots/22-pull-request-review.png)
-
-*Figure 22: Reviewing proposed changes.*
-
-![Pull request merged](screenshots/23-pull-request-merged.png)
-
-*Figure 23: Merging a pull request.*
 
 ---
 
@@ -503,17 +379,6 @@ To push the tag to GitHub:
 ```bash
 git push origin v1.0.0
 ```
-
-### Practical Evidence
-
-![Version tag creation](screenshots/24-version-tag-created.png)
-
-*Figure 24: Creating the v1.0.0 version tag.*
-
-![Version tag pushed](screenshots/25-version-tag-pushed.png)
-
-*Figure 25: Pushing the version tag to GitHub.*
-
 ---
 
 ## 9. Relevance to Cloud Engineering
@@ -567,22 +432,6 @@ Engineer makes infrastructure changes
 This project explored the relationship between Git, infrastructure management, Terraform, and CI/CD. It did not involve deploying actual Terraform infrastructure or implementing a complete CI/CD pipeline.
 
 ---
-
-## 10. Challenges and Lessons Learned
-
-During the practical sessions, I encountered a few challenges that helped me understand how Git works beyond simply memorising commands.
-
-### 1. Master and Main Branch Difference
-
-I noticed that my local repository used `master` while GitHub had a `main` branch.
-
-I learned that branch names must be checked and managed carefully when connecting local and remote repositories.
-
-### 2. Duplicate README Files
-
-During the synchronisation process, I noticed that two README files appeared in the repository.
-
-This helped me understand the importance of checking the contents and history of both local and remote repositories before pushing and pulling changes.
 
 ### 3. Understanding Remote Operations
 
