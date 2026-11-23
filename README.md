@@ -2,7 +2,7 @@
 
 ### 
 
-A practical documentation of Git and GitHub concepts, commands, workflows, and their relevance to cloud engineering.
+A documentation of Git and GitHub concepts, commands, workflows, and their relevance to cloud engineering.
 
 ---
 
